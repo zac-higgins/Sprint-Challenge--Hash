@@ -1,8 +1,21 @@
 def has_negatives(a):
-
-    """
-    YOUR CODE HERE
-    """
+    numbers = {}
+    result = []
+    for number in a:
+        if number > 0:
+            if number not in numbers:
+                numbers[number] = 1
+            else:
+                numbers[number] += 1
+        if number < 0:
+            positive = number * -1
+            if positive not in numbers:
+                numbers[positive] = 1
+            else:
+                numbers[positive] += 1
+    for number in numbers:
+        if numbers[number] > 1:
+            result.append(number)
 
     return result
 
